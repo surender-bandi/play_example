@@ -1,0 +1,48 @@
+plugins {
+    id 'play'
+    id 'idea'
+    id 'java'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4-rc-4'
+}
+
+tasks.withType(PlayRun) {
+    httpPort = 9001
+    forkOptions.jvmArgs = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9002']
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            name "typesafe-maven-release"
+            url "https://repo.typesafe.com/typesafe/maven-releases"
+        }
+        ivy {
+            name "typesafe-ivy-release"
+            url "https://repo.typesafe.com/typesafe/ivy-releases"
+            layout "ivy"
+        }
+    }
+}
+
+model {
+    components {
+        play {
+            platform play: '2.6.7', scala: '2.12', java: '1.8'
+            injectedRoutesGenerator = true
+
+            /*sources {
+                twirlTemplates {
+                    defaultImports = TwirlImports.JAVA
+                }
+            }*/
+        }
+    }
+}
+
+dependencies {
+    play project(":playservice")
+}

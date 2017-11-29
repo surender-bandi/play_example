@@ -1,0 +1,8 @@
+# Routing to a different file/projects and defining the path in that file
+
+GET    /home                    com.liaison.service.controllers.HomeController.indexHome
+
+->     /                        playservice.Routes
+
+# Map static resources from the /public folder to the /assets URL path
+GET    /assets/*file          controllers.Assets.versioned(path="/public", file: Asset)

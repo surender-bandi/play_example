@@ -1,0 +1,58 @@
+#REST service with POST
+POST    /addpayloaddata                com.liaison.service.controllers.AddPayloadController.addPayload
+
+#REST service with GET
+GET     /getpayload                    com.liaison.service.controllers.ReadPayloadController.listPayload
+
+# REST service to clear the payload details
+DELETE /                      com.liaison.service.controllers.RemovePayloadController.removePayload
+
+# REST service to retrieve the payload details
+GET    /error                 com.liaison.service.controllers.ErrorController.showError
+
+# Sample REST service to send and log the message using akka
+POST   /message               com.liaison.service.controllers.SendMessageController.sendMessage
+
+# Sample REST service to cache the value
+POST   /cache                 com.liaison.service.cache.ApplicationCache.addToCache
+
+# Sample REST service to get the cache value
+GET   /getcache               com.liaison.service.cache.ApplicationCache.getCache
+
+# Sample REST service to get or update the cache value
+GET   /updatecache            com.liaison.service.cache.ApplicationCache.getOrUpdateCache
+
+# Sample REST service to cache the request
+POST  /keycache               com.liaison.service.cache.AnnotaionCached.cacheRequest
+
+# Sample REST service to get cache request
+GET   /acache                 com.liaison.service.cache.AnnotaionCached.getResultCache
+
+# Sample REST service for action composition
+GET   /action/data            com.liaison.service.controllers.ActionCompController.getActionData
+
+# Sample REST service to Basic Auth
+GET   /auth                   com.liaison.service.controllers.UserLoginController.authAndProceed
+
+# Sample REST service to OAuth
+GET   /oauth/homeTimeline     com.liaison.service.controllers.UserLoginOAuthController.homeTimeline
+GET   /oauth/auth             com.liaison.service.controllers.UserLoginOAuthController.auth
+GET   /openID/login           com.liaison.service.controllers.OpenIDController.loginPost
+GET   /openID/callback        com.liaison.service.controllers.OpenIDController.openIDCallback
+
+GET   /authcheck              com.liaison.service.controllers.AuthCheckController.authCheck
+
+GET   /playmessage            com.liaison.service.controllers.SendMessageToAkkaPoc.sendPlayMessage
+
+PUT   /playHttpMessage        com.liaison.service.controllers.PlayAkkaHTTPController.putMessageToAkkaHTTP
+
+# REST service with GET
+GET    /listDataDetails       com.liaison.service.play.nucleus.PostController.list
+# REST service with POST
+POST   /createData           com.liaison.service.play.nucleus.PostController.create
+# REST service with GET parameterized
+GET    /:id                 com.liaison.service.play.nucleus.PostController.show(id)
+# REST service with POST parameterized
+POST    /:id                com.liaison.service.play.nucleus.PostController.update(id)
+
+GET   /assets/*file           controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,0 +1,46 @@
+plugins {
+    id 'play'
+    id 'java'
+}
+
+dependencies {
+
+    play "com.typesafe.play:play_2.12:2.6.7"
+    play "commons-lang:commons-lang:2.6"
+    play "com.typesafe.play:play-guice_2.12:2.6.7"
+    compile group: 'com.google.inject', name: 'guice', version: '3.0'
+
+    compile group: 'javax.persistence', name: 'persistence-api', version: '1.0.2'
+
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.194'
+
+    compile group: 'com.typesafe.play', name: 'play-ws_2.12', version: '2.6.7'
+
+    compile group: 'com.typesafe.play', name: 'play-openid_2.12', version: '2.6.7'
+
+    compile group: 'com.google.gdata', name: 'core', version: '1.47.1'
+
+    compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.4'
+
+    compile group: 'org.ehcache', name: 'jcache', version: '1.0.1'
+
+    compile group: 'com.typesafe.play', name: 'play-jcache_2.12', version: '2.6.7'
+
+    testCompile group: 'com.typesafe.play', name: 'play-ehcache_2.12', version: '2.6.7'
+
+    compile group: 'org.jsr107.ri', name: 'cache-annotations-ri-guice', version: '1.0.0'
+
+    compile group: 'io.dropwizard.metrics', name: 'metrics-core', version: '3.2.1'
+
+    compile group: 'com.palominolabs.http', name: 'url-builder', version: '1.1.0'
+
+    compile group: 'net.jodah', name: 'failsafe', version: '1.0.3'
+
+    compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+
+    compile group: 'com.github.majikthys', name: 'log4j2-logstash-jsonevent-layout', version: '3.+'
+
+    compile group: 'com.typesafe.akka', name: 'akka-remote_2.12', version: '2.5.7'
+
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.0'
+}
